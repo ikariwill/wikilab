@@ -4,6 +4,7 @@ import { StudentsService } from '@services/students/students.service';
 import { UseGuards } from '@nestjs/common';
 import { AuthorizationGuard } from '@http/auth/authorization.guard';
 import { EnrollmentsService } from '@services/enrollments/enrollments.service';
+import { AuthUser, CurrentUser } from '@http/auth/current-user';
 
 @Resolver(() => Student)
 export class StudentsResolver {
@@ -11,6 +12,12 @@ export class StudentsResolver {
     private studentsService: StudentsService,
     private enrollmentsService: EnrollmentsService,
   ) {}
+
+  @UseGuards(AuthorizationGuard)
+  @Query(() => Student)
+  me(@CurrentUser() user: AuthUser) {
+    return this.studentsService.getStudentByAuthUserId(user.sub);
+  }
 
   @UseGuards(AuthorizationGuard)
   @Query(() => [Student])
