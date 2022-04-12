@@ -1,17 +1,9 @@
 import { UseGuards } from '@nestjs/common';
-import {
-  Resolver,
-  Query,
-  Mutation,
-  Args,
-  ResolveField,
-  Parent,
-} from '@nestjs/graphql';
+import { Resolver, Query, ResolveField, Parent } from '@nestjs/graphql';
 import { CustomersService } from '../../../services/customers/customers.service';
 import { PurchasesService } from '../../../services/purchases/purchases.service';
 import { AuthorizationGuard } from '../../auth/authorization.guard';
 import { AuthUser, CurrentUser } from '../../auth/current-user';
-import { CreateProductInput } from '../inputs/create-product.input';
 import { Customer } from '../models/customer';
 import { Purchase } from '../models/purchase';
 

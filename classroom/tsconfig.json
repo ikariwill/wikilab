@@ -7,9 +7,32 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
+    "baseUrl": ".",
+    "paths": {
+      "@graphql/resolvers/*": [
+        "./src/http/graphql/resolvers/*"
+      ],
+      "@graphql/models/*": [
+        "./src/http/graphql/models/*"
+      ],
+      "@graphql/inputs/*": [
+        "./src/http/graphql/inputs/*"
+      ],
+      "@prisma/*": [
+        "./src/database/prisma/*"
+      ],
+      "@database/*": [
+        "./src/database/*"
+      ],
+      "@http/*": [
+        "./src/http/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
+      ],
+    },
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,

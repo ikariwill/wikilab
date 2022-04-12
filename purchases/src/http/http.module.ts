@@ -26,13 +26,11 @@ import { CustomersResolver } from './graphql/resolvers/customers.resolver';
     //Services
     ProductsService,
     PurchasesService,
+    CustomersService,
 
     //Resolvers
     ProductsResolver,
     PurchasesResolver,
-
-    // Customers
-    CustomersService,
     CustomersResolver,
   ],
 })

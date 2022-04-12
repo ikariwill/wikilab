@@ -1,5 +1,5 @@
 import { ObjectType, ID, Field } from '@nestjs/graphql';
-import { Enrollment } from './enrollment';
+import { Enrollment } from '@graphql/models/enrollment';
 
 @ObjectType()
 export class Student {
