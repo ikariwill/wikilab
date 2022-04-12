@@ -5,7 +5,6 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { DatabaseModule } from '../database/database.module';
 import path from 'node:path';
 import { ApolloDriver } from '@nestjs/apollo';
-import { TestResolver } from './test.resolver';
 
 @Module({
   imports: [
@@ -16,6 +15,6 @@ import { TestResolver } from './test.resolver';
       driver: ApolloDriver,
     }),
   ],
-  providers: [TestResolver],
+  providers: [],
 })
 export class HttpModule {}
